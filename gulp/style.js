@@ -3,10 +3,10 @@ import less         from 'gulp-less';
 import autoprefixer from 'gulp-autoprefixer';
 import sourcemaps    from 'gulp-sourcemaps';
 import browserSync  from 'browser-sync';
-import handleErrors from './utils/handleError.js';
+import handleErrors from './utils/handleError';
 import config from './config';
 
-gulp.task('less', () => {
+gulp.task('less', ['clean'], () => {
   return gulp.src(config.styles.less.srcToBeCompiled)
           .pipe(sourcemaps.init())
           .pipe(less())
@@ -15,5 +15,5 @@ gulp.task('less', () => {
             browsers: ['last 2 versions']
           }))
           .pipe(sourcemaps.write())
-          .pipe(gulp.dest(config.styles.dest))
+          .pipe(gulp.dest(config.styles.dest));
 });

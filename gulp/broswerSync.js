@@ -4,7 +4,7 @@ import config from './config';
 
 const bs = browserSync.create('cssbook');
 
-gulp.task('browser-sync', function() {
+gulp.task('browser-sync', ['less'], function() {
   bs.init({
     logFileChanges: true,
     server: {
