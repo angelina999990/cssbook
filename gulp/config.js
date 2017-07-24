@@ -17,8 +17,12 @@ export default {
   },
 
   scripts: {
-    src: src + 'js/app.js',
-    dest: dest + 'js/app.js',
-    destToWatch: dest + 'js/*.js'
+    src: src + 'modules/app.js',
+    dest: dest + 'js',
+    destToWatch: dest + '**/*.js'
+  },
+
+  views: {
+    src: src + '**/*.vue'
   }
 };
