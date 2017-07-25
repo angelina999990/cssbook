@@ -23,14 +23,13 @@ gulp.task('less', () => {
 
 gulp.task('scripts', () => {
   return browserify({
-            entries: config.scripts.src
+            entries: config.scripts.src,
+            debug: true
           })
             .bundle()
           .pipe(source('app.js'))
           .pipe(buffer())
-          .pipe(sourcemaps.write())
           .on('error', handleErrors)
-          .pipe(sourcemaps.write())
           .pipe(gulp.dest(config.scripts.dest));
 });
 

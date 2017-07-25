@@ -19,7 +19,8 @@ export default {
   scripts: {
     src: src + 'modules/app.js',
     dest: dest + 'js',
-    destToWatch: dest + '**/*.js'
+    destToWatch: dest + '**/*.js',
+    srcToBeCompiled: src + '**/*.vue'
   },
 
   views: {

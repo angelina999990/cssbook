@@ -26,6 +26,8 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
-  }
+  },
+
+  title: 'Test'
 }
 </script>
