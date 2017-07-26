@@ -1,11 +1,11 @@
 .sidebar {
   position: fixed;
   left: 0;
-  top: 62px;
-  width: 264px;
+  top: @header-height;
+  width: @sidebar-width;
   height: 100%;
-  color: rgba(197, 200, 198, 0.8);
-  background-color: #1d1f21;
+  color: @color-gray08;
+  background-color: @sidebar-background-color;
 
   .recipe-list {
     padding: 28px 18px 0 18px;
@@ -13,7 +13,7 @@
 
     li {
       padding: 16px 0px 10px 0px;
-      border-bottom: 1px solid rgba(197, 200, 198, 0.2);
+      border-bottom: 1px solid @color-gray02;
       font-size: 0.8em;
       cursor: pointer;
     }

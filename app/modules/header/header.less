@@ -1,7 +1,12 @@
 .header {
-  height: 62px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: @header-height;
+  width: 100%;
   text-align: center;
-  line-height: 62px;
-  color: rgba(197, 200, 198, 0.8);
-  background-color: #181a1c;
+  line-height: @header-height;
+  color: @color-gray08;
+  background-color: @header-background-color;
+  z-index: 9;
 }
