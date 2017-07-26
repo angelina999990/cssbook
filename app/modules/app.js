@@ -8,7 +8,7 @@ window.eventBus = new Vue();
 var App = new Vue({
   el: '#app',
   data: {
-    menuList: Object.keys(componentList).map( key => componentList[key].title ).filter(item => item),
+    menuList: Object.keys(componentList).map( key => { return {title: componentList[key].title, viewName:key}; } ).filter(item => item.title),
     currentView: ''
   },
 
@@ -16,5 +16,5 @@ var App = new Vue({
 });
 
 eventBus.$on('menuItemClicked', menuItem => {
-  alert('name: ' + menuItem);
+  App.$data.currentView = menuItem.viewName;
 });

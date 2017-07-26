@@ -12,7 +12,7 @@
     <app-sidebar :menu-list="menuList"></app-sidebar>
 
     <div class="main-content">
-      <div :is="currentView"></div>
+      <component :is="currentView"></component>
     </div>
   </div>
 
