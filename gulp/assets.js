@@ -34,8 +34,7 @@ gulp.task('scripts', () => {
 });
 
 gulp.task('build', () => {
-  runSequence(
-    'clean',
-    ['less', 'scripts']
-  );
+  runSequence('clean', ['less', 'scripts'], () => {
+    runSequence('browser-sync');
+  });
 });

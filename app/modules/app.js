@@ -9,7 +9,7 @@ var App = new Vue({
   el: '#app',
   data: {
     menuList: Object.keys(componentList).map( key => {return {title: componentList[key].title, viewName:key, isActive: false}; }).filter(item => item.title),
-    currentView: ''
+    currentView: 'home'
   },
 
   components: componentList

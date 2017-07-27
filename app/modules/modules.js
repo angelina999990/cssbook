@@ -1,4 +1,4 @@
-import test from './example/app.vue';
+import home from './home/home.component.vue';
 import appHeader from './header/header.component.vue';
 import appSidebar from './sidebar/sidebar.component.vue';
 
@@ -6,7 +6,7 @@ import appSidebar from './sidebar/sidebar.component.vue';
 import pointerHoverEffects from './pointerHoverEffects/pointerHoverEffects.component.vue';
 
 export default {
-  test,
+  home,
   appHeader,
   appSidebar,
   pointerHoverEffects
