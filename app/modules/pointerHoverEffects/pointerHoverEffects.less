@@ -1,65 +1,136 @@
 .pointer-hover-effects {
-  color: @color-gray08;
+  font-weight: 700;
 
   overflow-y: scroll;
-  .photobox {
-    display: inline-block;
 
-    .photobox__previewbox {
-      position: relative;
-      margin: 10px;
-      overflow: hidden;
+  .page__container {
+    display: flex;
+    justify-content: space-between;
 
-      .photobox__preview {
-        display: block;
-        width: 300px;
-        height: 300px;
-        margin-bottom: 5px;
-        background-color: @color-gray08;
-        background-image: url('http://media.istockphoto.com/photos/abstract-gradient-background-with-blue-and-green-colors-picture-id498785161?k=6&m=498785161&s=612x612&w=0&h=nqVpcBpmRKVlT3Ve3Zs58EZj_6d1iTVzO9jYLlmg6cM=');
+    .photobox {
+      color: @color-white;
+      display: inline-block;
+
+      .photobox__previewbox {
+        position: relative;
+        overflow: hidden;
+
+        .photobox__preview {
+          display: block;
+          width: 300px;
+          height: 300px;
+          margin-bottom: 5px;
+          background-color: @color-gray08;
+          background-image: url('http://media.istockphoto.com/photos/abstract-gradient-background-with-blue-and-green-colors-picture-id498785161?k=6&m=498785161&s=612x612&w=0&h=nqVpcBpmRKVlT3Ve3Zs58EZj_6d1iTVzO9jYLlmg6cM=');
+        }
+
+        &::before {
+          content: "";
+          background-color: @color-black05;
+        }
+      }
+    }
+
+    .photobox_type1 {
+      .photobox__previewbox::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        padding: 25%;
+        border-radius: 50%;
+        transition: transform .3s ease 0.05s;
+        transform: scale(0);
       }
 
-      &:before {
-        content: "";
-        background-color: @color-black05;
+      & .photobox__label {
+        position: absolute;
+        top: 50%;
+        left: 15%;
+        width: 50%;
+        transform: translate(-200%, -50%);
+        transition: transform .3s ease-out;
+      }
+
+      &:hover {
+        .photobox__previewbox::before {
+          transform: scale(2);
+          transition-duration: .3s;
+          transition-delay: 0s;
+        }
+
+        .photobox__label {
+          transition-duration: .3s;
+          transform: translate(0, -50%);
+        }
+      }
+
+    }
+
+    .photobox_type2 {
+      .photobox__previewbox::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: opacity .8s ease 0s;
+        opacity: 0;
+      }
+
+      & .photobox__label {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        opacity: 0;
+        transition: opacity .5s ease-in-out;
+      }
+
+      &:hover {
+        .photobox__previewbox::before, .photobox__label {
+          opacity: 1;
+        }
+      }
+    }
+
+    .photobox_type3 {
+      .photobox__previewbox::before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transition: transform 1s cubic-bezier(0.32, 0.12, 0.36, 1.45);
+        transform: scale(0);
+      }
+
+      .photobox__label {
+        position: absolute;
+        top: -50%;
+        left: 0;
+        z-index: 9;
+        width: 100%;
+        text-align: center;
+        transition: top 1s cubic-bezier(0.32, 0.12, 0.36, 1.45);
+      }
+
+      &:hover {
+        .photobox__previewbox::before {
+          transform: scale(1);
+        }
+        .photobox__previewbox {
+          overflow: visible; // to see transition's timing-function's effect when zoom in, need change parent box overflow attr.
+        }
+        .photobox__label {
+          top: 50%;
+        }
       }
     }
   }
 
-  .photobox_type1 {
-    .photobox__previewbox:before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 0;
-      padding: 25%;
-      border-radius: 50%;
-      transition: transform .3s ease 0.05s;
-      transform: scale(0);
-    }
-
-    & .photobox__label {
-      position: absolute;
-      top: 50%;
-      left: 15%;
-      width: 50%;
-      transform: translate(-200%, -50%);
-      transition: transform .3s ease-out;
-    }
-
-    &:hover {
-      .photobox__previewbox:before {
-        transform: scale(2);
-        transition-duration: .3s;
-        transition-delay: 0s;
-      }
-
-      .photobox__label {
-        transition-duration: .3s;
-        transform: translate(0, -50%);
-      }
-    }
-
+  footer {
+    margin-top: 20px;
+    text-align: right;
   }
 }
