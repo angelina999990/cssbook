@@ -14,6 +14,9 @@
         <span class="progress-bar"></span>
       </div>
     </div>
+    <div class="preview-box">
+      <div class="loader-4"></div>
+    </div>
   </div>
 </template>
 
