@@ -195,7 +195,7 @@
   border: 50px solid transparent;
   border-color: @color-green-deep transparent @color-green-deep transparent;
   background: @color-green;
-  // animation: loader-4-animation 1.7s linear infinite;
+  animation: loader-4-animation 1.7s linear infinite;
 
   &::before, &::after {
     content: '';
@@ -217,7 +217,7 @@
   }
 
   @keyframes loader-4-animation {
-    0% {
+    100% {
       transform: rotate(360deg);
     }
   }
