@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="preview-box">
+    <!-- <div class="preview-box">
       <div class="loader-1"></div>
     </div>
     <div class="preview-box">
@@ -16,12 +16,35 @@
     </div>
     <div class="preview-box">
       <div class="loader-4"></div>
+    </div> -->
+
+    <div class="preview-box">
+      <div class="loader-5">
+        <i class="fa" :class="[imageClass]"></i>
+      </div>
+      <span class="loader-text">{{percentage}}%</span>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  title: 'Loader'
+  data () {
+    return {
+      percentage: 0,
+      images: [
+        "icon-ticket", "icon-lifebuoy", "icon-compass", "icon-history", "icon-clock2", "icon-clock", "icon-alarm", "icon-stopwatch", "icon-redo"
+      ]
+    }
+  },
+
+  computed: {
+    imageClass () {
+      let index = Math.floor( this.percentage / 10 );
+      return this.images[index];
+    }
+  },
+
+  title: 'Loader',
 }
 </script>

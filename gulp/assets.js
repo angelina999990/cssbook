@@ -2,6 +2,7 @@ import gulp         from 'gulp';
 import less         from 'gulp-less';
 import autoprefixer from 'gulp-autoprefixer';
 import sourcemaps   from 'gulp-sourcemaps';
+import changed      from 'gulp-changed';
 import runSequence  from 'run-sequence';
 import browserify   from 'browserify';
 import source       from 'vinyl-source-stream';
@@ -33,8 +34,19 @@ gulp.task('scripts', () => {
           .pipe(gulp.dest(config.scripts.dest));
 });
 
+gulp.task('copy', () => {
+  gulp.src(config.assets.src)
+    // .pipe(changed(config.assets.dest))
+    .pipe(gulp.dest(config.assets.dest));
+});
+
 gulp.task('build', () => {
-  runSequence('clean', ['less', 'scripts'], () => {
-    runSequence('browser-sync');
-  });
+  runSequence('clean',
+              'scripts',
+              'copy',
+              'less',
+              () => {
+                runSequence('browser-sync');
+              }
+            );
 });

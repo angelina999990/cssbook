@@ -10,7 +10,7 @@ export default {
     src: src + '/**/*.less',
 
     less: {
-      srcToBeCompiled: src + '/less/app.less'
+      srcToBeCompiled: [src + '/less/app.less']
     },
     dest: dest + 'css',
     destToWatch: dest + 'css/*.css'
@@ -25,5 +25,10 @@ export default {
 
   views: {
     src: src + '**/*.vue'
+  },
+
+  assets: {
+    src: src + 'assets/**/*',
+    dest: dest + 'assets'
   }
 };
