@@ -31,3 +31,7 @@ export default {
   title: 'Pointer Hover Effects'
 }
 </script>
+
+<style lang="scss">
+@import './pointerHoverEffects.scss';
+</style>

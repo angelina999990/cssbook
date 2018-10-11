@@ -1,6 +1,6 @@
 <template>
-  <div class="wrapper">
-    <!-- <div class="preview-box">
+  <div class="loader-wrapper">
+    <div class="preview-box">
       <div class="loader-1"></div>
     </div>
     <div class="preview-box">
@@ -16,13 +16,6 @@
     </div>
     <div class="preview-box">
       <div class="loader-4"></div>
-    </div> -->
-
-    <div class="preview-box">
-      <div class="loader-5">
-        <i class="fa" :class="[imageClass]"></i>
-      </div>
-      <span class="loader-text">{{percentage}}%</span>
     </div>
   </div>
 </template>
@@ -48,3 +41,7 @@ export default {
   title: 'Loader',
 }
 </script>
+
+<style lang="scss">
+@import './loader.scss';
+</style>

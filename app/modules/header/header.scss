@@ -1,0 +1,12 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: $header-height;
+  width: 100%;
+  text-align: center;
+  line-height: $header-height;
+  color: $color-gray08;
+  background-color: $header-background-color;
+  z-index: 9;
+}

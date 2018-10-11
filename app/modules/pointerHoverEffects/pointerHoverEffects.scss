@@ -1,3 +1,4 @@
+@import '../../styles/variable.scss';
 .pointer-hover-effects {
   font-weight: 700;
 
@@ -8,7 +9,7 @@
     justify-content: space-between;
 
     .photobox {
-      color: @color-white;
+      color: $color-white;
       display: inline-block;
 
       .photobox__previewbox {
@@ -20,13 +21,13 @@
           width: 300px;
           height: 300px;
           margin-bottom: 5px;
-          background-color: @color-gray08;
+          background-color: $color-gray08;
           background-image: url('http://media.istockphoto.com/photos/abstract-gradient-background-with-blue-and-green-colors-picture-id498785161?k=6&m=498785161&s=612x612&w=0&h=nqVpcBpmRKVlT3Ve3Zs58EZj_6d1iTVzO9jYLlmg6cM=');
         }
 
         &::before {
           content: "";
-          background-color: @color-black05;
+          background-color: $color-black05;
         }
       }
     }

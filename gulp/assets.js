@@ -1,5 +1,5 @@
 import gulp         from 'gulp';
-import less         from 'gulp-less';
+import sass         from 'gulp-sass';
 import autoprefixer from 'gulp-autoprefixer';
 import sourcemaps   from 'gulp-sourcemaps';
 import changed      from 'gulp-changed';
@@ -10,11 +10,10 @@ import buffer       from 'vinyl-buffer';
 import handleErrors from './utils/handleError';
 import config       from './config';
 
-gulp.task('less', () => {
-  return gulp.src(config.styles.less.srcToBeCompiled)
+gulp.task('scss', () => {
+  return gulp.src(config.styles.scss.srcToBeCompiled)
           .pipe(sourcemaps.init())
-          .pipe(less())
-          .on('error', handleErrors)
+          .pipe(sass().on('error', handleErrors))
           .pipe(autoprefixer({
             browsers: ['last 2 versions']
           }))
@@ -44,7 +43,7 @@ gulp.task('build', () => {
   runSequence('clean',
               'scripts',
               'copy',
-              'less',
+              'scss',
               () => {
                 runSequence('browser-sync');
               }

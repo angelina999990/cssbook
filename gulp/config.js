@@ -7,10 +7,11 @@ export default {
   serverBaseDir: [src, dest],
 
   styles: {
-    src: src + '/**/*.less',
+    src: src + '/**/*.scss',
 
-    less: {
-      srcToBeCompiled: [src + '/less/app.less']
+    scss: {
+      srcToBeCompiled: [src + '/styles/app.scss'],
+      srcRequiredVueRecompiled: src + 'modules/**/*.scss'
     },
     dest: dest + 'css',
     destToWatch: dest + 'css/*.css'
