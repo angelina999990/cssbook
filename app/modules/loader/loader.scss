@@ -13,11 +13,15 @@ $offset: $lat - $thickness;
 
 .loader-wrapper {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 
   .preview-box {
+    flex-basis: 25%;
     display: flex;
     align-items: center;
+    justify-content: center;
+    min-height: 100px;
   }
 
   .loader-1 {
@@ -106,7 +110,6 @@ $offset: $lat - $thickness;
     height: 40px;
     border-radius: 100%;
     position: relative;
-    margin: 0 auto;
 
     &::before, &::after {
       content: '';
@@ -204,4 +207,30 @@ $offset: $lat - $thickness;
     }
   }
 
+  .loader-6 {
+    width: 50px;
+    height: 50px;
+    border: 1px solid lightblue;
+    border-radius: 50%;
+    animation: loader-6-animation 6s linear 0s infinite;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border: 1px solid blue;
+      border-radius: 50%;
+      background: blue;
+    }
+
+    @keyframes loader-6-animation {
+      from {
+        transform: rotate(0);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
 }

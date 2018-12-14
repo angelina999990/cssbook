@@ -17,6 +17,21 @@
     <div class="preview-box">
       <div class="loader-4"></div>
     </div>
+    <!-- <div class="preview-box">
+      <div class="loader-5">
+        <svg width="800" height="500" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 200,60 A 50,50 0 1 1 300,60 A 50,50 0 1 1 200,60" stroke="orange" fill="none" id="circlePath"></path>
+          <circle r="5" fill="darkorange">
+            <animateMotion dur="6s" repeatCount="indefinite">
+              <mpath xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#circlePath"></mpath>
+            </animateMotion>
+          </circle>
+        </svg>
+      </div>
+    </div> -->
+    <div class="preview-box">
+      <div class="loader-6"></div>
+    </div>
   </div>
 </template>
 
